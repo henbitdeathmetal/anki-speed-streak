@@ -1,9 +1,5 @@
 # Speed Streak v1.20
 
-This folder contains the Speed Streak v1.20 version of the project packaged as an Anki add-on.
-
-It does not modify the original standalone files in the parent folder.
-
 <p><strong>High-yield recent changes since v1.16</strong></p>
 <ul>
   <li>Added an optional <strong>Review Later deck-page button</strong> showing how many cards were added to Review Later today</li>
