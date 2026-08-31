@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Archived Speed Streak AnkiWeb description</title>
+  <style>
+    body { margin: 0; background: #eef0f3; color: #202124; font: 15px/1.55 Arial, Helvetica, sans-serif; }
+    main { width: min(780px, calc(100% - 28px)); margin: 28px auto; padding: 28px 34px 44px; background: #fff; border: 1px solid #d8dce3; box-shadow: 0 3px 18px rgba(30,40,55,.09); }
+    img { max-width: 100%; height: auto; }
+  </style>
+</head>
+<body>
+  <main id="description"></main>
+  <script>
+    fetch("ankiweb-description.html").then(r => r.text()).then(html => { document.getElementById("description").innerHTML = html; });
+  </script>
+</body>
+</html>

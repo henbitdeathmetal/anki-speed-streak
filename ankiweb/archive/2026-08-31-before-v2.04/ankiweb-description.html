@@ -1,0 +1,110 @@
+<p><strong>Context:</strong> This was initially discussed in <a href="https://www.reddit.com/r/Anki/comments/1s13k99/i_am_chronically_slow_so_i_vibecoded_an_anki/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button">this Reddit post</a>.</p>
+
+<p><strong>Open source:</strong> <a href="https://github.com/henbitdeathmetal/anki-speed-streak">Speed Streak on GitHub</a></p>
+
+<p><strong>🎮Xbox controller🎮 setup instructions:</strong> <a href="https://cultured-beluga-9fc.notion.site/Speed-Streak-Xbox-Controller-Setup-Instructions-32a1d706353980f3920cfe509cc96a90?pvs=74">Speed Streak Xbox Controller Setup Instructions</a></p>
+
+<p><strong>Speed Streak</strong> is an add-on I made because I am chronically slow. The point is to turn review into a game of speed: answer quickly or admit you do not actually know the card yet. It is meant to help you stop getting trapped by a handful of cards and protect the main review session so your due cards get done today.</p>
+
+<p>There is a timer on both sides of the card, a streak you do not want to lose, and visual feedback that makes momentum feel satisfying. If you use a haptic-enabled controller, good answers feel like landing hits and timeouts are punishing in a way that I personally find motivating.</p>
+
+<p>The idea is that this can help you quickly sort cards into three buckets: cards you know, cards you do not know, and cards that are suboptimally designed for a speed-focused session.</p>
+
+<p><strong>What it does</strong></p>
+<ul>
+  <li>Runs a live question timer and answer timer</li>
+  <li>Builds a streak and growing orbit so momentum feels rewarding and losing it is disappointing</li>
+  <li>Adds <strong>controller haptics</strong> on compatible setups so reveals, answers, skips, and time pressure feel physical instead of abstract</li>
+  <li>Lets you flag certain cards as <strong>Time Drain</strong> so they are called out immediately and can be buried before they derail the whole session</li>
+  <li>Lets you flag cards as <strong>Review Later</strong> so you can keep moving now and come back when you actually have time</li>
+  <li>Includes a <strong>Review Later Manager</strong> that can filter those cards, copy them as text, open them in the Browser, or build a filtered deck from them</li>
+</ul>
+
+<p><strong>The philosophy</strong></p>
+<p>A speed session is for getting through due cards efficiently. If you know a card, answer it fast. If you cannot answer it fast, that is useful information. If a card is inherently too long, poorly designed, or just wrong for the moment, the session should not be sacrificed to it. Speed Streak is built to help you notice that quickly and keep moving.</p>
+
+<p><strong>Time Drain</strong> is for cards that repeatedly eat too much time. They are not necessarily bad enough to suspend or delete, but they are bad for a speed session. When one appears, Speed Streak warns you clearly so you can bury it, preserve momentum, and deal with it later on purpose instead of accidentally spending half your review block on it.</p>
+
+<p><strong>Review Later</strong> is for cards you got through but still want to revisit more carefully. It gives you a way to protect today's pace without pretending the card no longer matters.</p>
+
+<p>The <strong>Review Later Manager</strong> is there for the second pass.</p>
+<ul>
+  <li>View all cards currently marked Review Later</li>
+  <li>Filter them by when they were added, such as Today, Yesterday, Past X days, or All</li>
+  <li>Copy the visible cards as plain field text</li>
+  <li>Open the visible set in Anki Browser</li>
+  <li>Create a dated filtered deck from the visible set</li>
+</ul>
+
+<p><strong>Other useful details</strong></p>
+<ul>
+  <li>Pause and resume with <strong>P</strong> (ideally programmed to controller)</li> 
+  <li>There are appearance options, saved color customization, and a vibration-only mode</li>
+  <li>Historical stats tracking is a work in progress</li>
+</ul>
+
+<p><strong>Notes</strong></p>
+<ul>
+  <li>Windows with an XInput-compatible controller is still the most reliable setup for haptics</li>
+  <li>Non-Windows platforms may still work visually, but controller vibration depends on the platform, browser/gamepad support, and controller setup</li>
+  <li>If you are on a slower machine, you can tone down or disable the heavier visual elements</li>
+</ul>
+
+<p><strong>High-yield recent changes</strong></p>
+<ul>
+  <li>Added <strong>Mac compatibility</strong>, though I still have not been able to test and troubleshoot haptics for controller users</li>
+  <li>Added the recommended <strong>External Window</strong> display mode for smoother rendering and better compatibility with add-ons like AMBOSS and AnkiHub</li>
+  <li>Added the ultra-low-resource <strong>Brick Layout</strong> view</li>
+  <li>Added per-event <strong>audio</strong> and haptic customization, including previews and custom audio uploads</li>
+  <li>Added configurable shortcuts and a <strong>Longest Streak</strong> stat</li>
+  <li>Undo now also rolls back your score and streak</li>
+  <li>Added an optional <strong>Review Later deck-page button</strong> showing how many cards were added to Review Later today</li>
+  <li>Added a <strong>WebGL satellite renderer</strong> for the Sphere view for smoother, more memory efficient effects</li>
+  <li>Added <strong>window position presets</strong> for the External Window mode, allowing you to save your preferred setups</li>
+  <li>Added a <strong>Review Time Drains Last</strong> option so cards flagged as Time Drains are the last reviewed each session</li>
+</ul>
+
+<hr>
+
+<p><strong>June 19, 2026</strong></p>
+<ul>
+  <li><strong>Special Timers:</strong> Set separate question and answer times for typed-answer cards, AnKing one-by-one cards, Time Drain flagged cards (overriding default Time Drain behavior), and cards with selected tags. Either side can also be untimed.</li>
+  <li><strong>Pause overview:</strong> While paused, right-click the pause screen and select <strong>Show Timer</strong> to see cards reviewed, elapsed time, review speed, and answer-button totals since the overview was started or reset.</li>
+  <li><strong>Optional side panel:</strong> Hide the side panel while keeping the timer above the card and controller haptics.</li>
+  <li><strong>Controller vibration:</strong> Added more vibration patterns and per-event customization. Users with the 2026 Steam Controller launching Anki through Steam can select <strong>Steam Controller / Steam Input</strong> for defaults tuned to work better with the Steam Controller haptics.</li>
+</ul>
+
+<p><strong>Using Special Timers</strong></p>
+<ol>
+  <li>Open <strong>Speed Streak Settings</strong>.</li>
+  <li>Open <strong>Timers</strong>, then <strong>Special Timers</strong>.</li>
+  <li>Enable the card type you want to customize.</li>
+  <li>Choose separate question and answer times, or mark either phase as <strong>Untimed</strong>.</li>
+</ol>
+
+
+<p><strong>July 15, 2026</strong></p>
+<ul>
+  <li><strong>Pause Safety Lock:</strong> Prevents keyboard shortcuts and Show Answer or ease-button clicks from showing or answering cards while Speed Streak is paused. This can be toggled on under shortcuts.</li>
+  <li><strong>Fixed 130 Satellite Pause Error:</strong> Removed an inadvertently added safety feature that forced a switch to a stationary satellite mode at 130 satellites.</li>
+</ul>
+
+<p><strong>July 18, 2026</strong></p>
+<ul>
+  <li><strong>Settings UI Update</strong> Slight update to settings user interface so it's a little faster to load and easier on the eyes.</li>
+  <li><strong>Added Note-Type Special Timer Option</strong> Now you can choose specific note types you want to have their own unique time limits.</li>
+</ul>
+
+<p><strong>July 23, 2026</strong></p>
+<ul>
+  <li><strong>Free First Card:</strong> Both sides of the first card are now untimed whenever you enter Review. This can be disabled in Timer settings.</li>
+  <li><strong>Answer Timeout Option:</strong> Added an option for answer-side timeouts to not break your streak. The default behavior still ends the streak.</li>
+</ul>
+
+<p><strong>August 14, 2026</strong></p>
+<ul>
+  <li><strong>Time Boosts:</strong> Earn Boosts by completing cards, then use one to add more time. No Pause and No Undo are available as optional controls.</li>
+  <li><strong>New Visuals:</strong> Added Fusion satellites, Singularity, and Crystal Reactor, along with expanded visual and color settings.</li>
+  <li><strong>Performance:</strong> Improved animation smoothness and reduced CPU and GPU usage.</li>
+  <li><strong>Settings:</strong> Reorganized and simplified the settings screen.</li>
+</ul>
