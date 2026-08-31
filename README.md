@@ -1,178 +1,77 @@
-# Speed Streak v1.20
+# Speed Streak 2.04
 
-<p><strong>High-yield recent changes since v1.16</strong></p>
-<ul>
-  <li>Added an optional <strong>Review Later deck-page button</strong> showing how many cards were added to Review Later today</li>
-  <li>Added an experimental <strong>WebGL satellite renderer</strong> for the Sphere view</li>
-  <li>Added <strong>window position presets</strong> for the External Window mode</li>
-  <li>Added a <strong>Review Time Drains Last</strong> option so future Time Drain repeats can move behind the rest of the current session</li>
-  <li>Removed the temporary testing control for manually setting the streak/satellite count</li>
-</ul>
+Speed Streak turns desktop Anki review into a game of focused momentum. It adds separate question and answer timers, a streak worth protecting, optional audio and controller feedback, and tools for moving past cards that consume too much of a review session.
 
-## Changelog
+![Speed Streak timer and Time Boost controls](ankiweb/v2.04/assets/boosts.png)
 
-### v1.20 (from v1.17)
-- Adds an experimental WebGL satellite renderer for the sphere view.
+[AnkiWeb](https://ankiweb.net/shared/info/1237336370) · [Controller setup](https://cultured-beluga-9fc.notion.site/Speed-Streak-Xbox-Controller-Setup-Instructions-32a1d706353980f3920cfe509cc96a90?pvs=74) · [Feedback on Reddit](https://www.reddit.com/message/compose/?to=henbitdeadnettle92&subject=Speed%20Streak%20feedback) · [Ko-fi](https://ko-fi.com/ankispeedstreak)
 
-### v1.17 (from v1.16)
+## New in 2.04
 
-- Added a new Review Later Manager toggle that controls whether Speed Streak shows a deck-page button with today's Review Later count.
-- Added the optional deck-page Review Later button itself, which stays hidden at zero and opens the Review Later Manager when clicked.
-- Kept the deck-page button implementation namespaced to Speed Streak so it can live beside Pocket Knife without sharing handlers or message IDs.
+- **Streak records:** show an all-time or today target, a live comparison, or five ranked/recent streaks during review.
+- **Comparable record details:** inspect active time, pauses, Review departures, restart continuation, undo use, and Pure status.
+- **“Time’s Running Out” cue:** choose the warning threshold, sound, volume, and exact sound moment that lands on each whole-second mark.
+- **More reliable audio startup:** packaged review effects and countdown cues are prepared ahead of time for tighter first-play timing.
+- **Help / Feedback hub:** direct access to reviews, Reddit feedback, and optional Ko-fi support.
+- **Experimental macOS controller vibration:** diagnostic and backend work is included, but real-controller testing is still needed.
 
-### v1.16 (from v1.15)
+![Streak records in the review display](ankiweb/v2.04/assets/streak-records-display.jpg)
 
-- Comparison build that restores the review-only external-window layout persistence experiment so it can be tested side-by-side against `v1.15`.
+## Main features
 
-### v1.15 (from v1.14)
+- Separate question and answer timers
+- Special timers for note types, tags, typed-answer cards, AnKing one-by-one cards, and flagged cards
+- Time Boost gameplay with optional No Pause and No Undo focus rules
+- Legacy Points mode for the earlier score-and-multiplier system
+- Time Drain warnings and optional countdown suspension
+- Review Later marking and manager tools
+- Per-event audio, synchronized countdown cues, custom sound uploads, and per-sound volume
+- Optional controller haptics with configurable patterns
+- Inline side panel or separate External Window with saved position presets
+- Fusion Rings, Singularity, Crystal Reactor, Classic Orbit, Brick, lightweight rows, and number-only visuals
+- Themes, color controls, shortcuts, and multiple performance levels
 
-- Rebuilt Speed Streak as a native Anki add-on, removing the old dependency on the external browser page, AnkiConnect, and AutoHotkey.
-- Added two display modes: an inline side pane and a separate external compatibility window. The external window is generally the recommended option because it renders more smoothly and plays better with add-ons like AnkiHub and AMBOSS.
-- Added a new `Brick Layout` view as the built-in ultra-low-resource mode alongside the original `Sphere/Satellites` view.
-- Added a full `Haptic/Audio Feedback` settings section with per-event audio and haptic customization, audio previews, audio uploads, and persistent uploaded-file ordering.
-- Packaged audio now ships in trimmed form so the built-in sounds start faster.
-- Added a `Shortcuts` settings section with a configurable pause shortcut, plus a new `Longest Streak` stat in the stats view.
-- Reworked the sidebar controls and settings layout, including symbol-based quick toggles for layout, display mode, haptics, and sound.
+## Visual modes
 
-## What it does
-
-- Lets you choose between an inline side pane and a compatibility floating window at launch
-- Tracks streaks and timers natively
-- Includes both the original `Sphere/Satellites` view and the battery-friendly `Brick Layout` mode
-- Uses the WebGL renderer by default for the Sphere view, with reduced-resource render modes still available
-- Adds optional Review Later deck-page status and Time Drain review-order controls
-- Saves and reapplies external-window position presets
-- Sends controller rumble on Windows through XInput and uses a browser gamepad fallback on non-Windows platforms when available
-- Removes the need for the external browser page, AnkiConnect, and AutoHotkey
-
-## Folder layout
-
-- `__init__.py`: add-on entrypoint and Anki hook wiring
-- `game_state.py`: native Python game engine
-- `haptics.py`: native Windows XInput rumble support
-- `reviewer_overlay.py`: reviewer integration and JS bridge
-- `web/overlay.css`: injected overlay styles
-- `web/overlay.js`: injected overlay UI, animations, and browser-side haptics fallback
+| Fusion Rings | Singularity | Crystal Reactor |
+| --- | --- | --- |
+| ![Fusion Rings](ankiweb/v2.04/assets/fusion-248.png) | ![Singularity](ankiweb/v2.04/assets/singularity-248.png) | ![Crystal Reactor](ankiweb/v2.04/assets/crystal-53.png) |
 
 ## Installation
 
-Anki loads add-ons from the `addons21` folder in your Anki profile, not from arbitrary project folders.
+The normal installation route is the [Speed Streak page on AnkiWeb](https://ankiweb.net/shared/info/1237336370).
 
-To install this manually:
+For a manual 2.04 install, download [`speed_streak_v2_04.ankiaddon`](speed-streak-addon-v2.04/speed_streak_v2_04.ankiaddon), open it with Anki, and restart Anki when prompted.
 
-1. Open Anki.
-2. Go to `Tools -> Add-ons -> View Files`.
-3. Close Anki.
-4. In the folder that opens, create a new folder named `speed_streak_v1_20`.
-5. Copy the contents of this project folder into that new folder.
-6. Start Anki again.
+The release folder also contains local install scripts:
 
-If the add-on loads successfully, the review screen will show Speed Streak in the display mode you choose at launch.
-`v1.20` keeps the `Brick Layout` visual mode, the optional deck-page Review Later count button, and the WebGL sphere renderer.
+- Windows: `speed-streak-addon-v2.04/install_to_anki.ps1`
+- macOS/Linux: `speed-streak-addon-v2.04/install_to_anki.sh`
 
-### Faster install on Windows
+Existing Speed Streak profile data is stored outside the add-on folder and is preserved across normal updates.
 
-You can also run:
+## Platform notes
 
-```powershell
-.\install_to_anki.ps1
-```
+- Desktop Anki only.
+- Windows with an XInput-compatible controller remains the most reliable controller-vibration setup.
+- Visuals and audio are designed for Windows, macOS, and Linux.
+- Controller vibration depends on the operating system, controller, driver, and available backend.
+- macOS vibration support is experimental and needs real-controller testing.
+- The External Window is generally the smoothest display option and is useful alongside add-ons such as AMBOSS and AnkiHub.
 
-from this folder, and it will copy the add-on into Anki's default `addons21` directory for you.
-Speed Streak keeps its mutable data in the current Anki profile's `addons-data/speed_streak` folder. The installer still preserves a legacy `user_files` folder so older installs can migrate forward safely.
+## Repository layout
 
-### Trim packaged audio on Windows
+- [`speed-streak-addon-v2.04/`](speed-streak-addon-v2.04/) — current source and installable package
+- [`ankiweb/v2.04/`](ankiweb/v2.04/) — paste-ready AnkiWeb description, preview, and hosted screenshots
+- Older `speed-streak-addon-*` folders — frozen historical versions
+- [`CHANGELOG.md`](CHANGELOG.md) — repository-level release history
 
-If you later add raw source packs back into an `Audio` folder, you can generate a trimmed `Audio_trimmed` folder with:
+## Development
 
-```powershell
-.\trim_audio_to_trimmed.ps1
-```
+The current add-on is a native Anki add-on written in Python with an HTML/CSS/JavaScript review interface. Its build scripts generate a clean `.ankiaddon` archive with the package root in the format AnkiWeb expects.
 
-The script trims only leading silence and writes the processed results into `Audio_trimmed` with the same subfolder structure. This repo currently ships the packaged audio in trimmed form.
+Tests for the actively developed copy are maintained in the development workspace; the public release folder contains the production add-on source and packaging scripts.
 
-### Faster install on macOS
+## License
 
-You can also run:
-
-```sh
-./install_to_anki.sh
-```
-
-from this folder, and it will copy the add-on into the default macOS `addons21` directory for you while preserving `user_files`.
-That legacy preserve step is only for migration compatibility. Live Speed Streak data is stored in the current profile's `addons-data/speed_streak` folder.
-
-## First run
-
-- On first launch, pick either `Inline Side Pane` or `External Window`.
-- `External Window` is recommended, especially if you use add-ons like AMBOSS or AnkiHub.
-- The default visual mode is `Sphere/Satellites` using the WebGL renderer. `Brick Layout` is the built-in ultra-low-resource alternative.
-- Open a deck and start reviewing.
-- The overlay arms itself on the first question card.
-- Show the answer normally.
-- Rate the card normally with buttons or keys.
-- In Settings, `Sphere/Satellites` keeps the old orbit view and `Brick Layout` gives the new ultra-low-resource visualization.
-- In Settings, enable the Review Later deck-page button if you want a deck-page count for cards added to Review Later today.
-- In the Time Drain panel, enable `Review Time Drains Last` if you want future Time Drain repeats to move behind the rest of the current session.
-- Press your configured pause shortcut to pause or resume the timer. The default is `P`.
-- If you have a compatible controller connected, rumble should fire on reveal, rating, skip, reset, and timeout. Windows uses native XInput. Non-Windows platforms use the embedded browser's gamepad haptics support when available.
-
-## Updating after changes
-
-The simplest reliable workflow is:
-
-1. Close Anki completely.
-2. Run `.\install_to_anki.ps1` again from this folder.
-3. Start Anki again.
-
-Anki add-ons are loaded at startup, so a full quit and reopen is the easiest way to reload changes.
-Live Speed Streak data now lives in the current Anki profile's `addons-data/speed_streak` folder. The legacy `user_files` folder is still preserved during installs so older data can migrate forward safely.
-
-## Publishing On AnkiWeb
-
-AnkiWeb accepts add-ons as `.ankiaddon` zip archives.
-
-This folder now includes:
-
-- `manifest.json` for direct file installs outside AnkiWeb
-- `build_ankiaddon.ps1` to create a clean upload package
-- `build_ankiaddon.sh` to create a clean upload package on macOS/Linux
-
-To build the package on Windows:
-
-```powershell
-.\build_ankiaddon.ps1
-```
-
-That creates:
-
-- `speed_streak_v1_20.ankiaddon`
-
-To build the package on macOS:
-
-```sh
-./build_ankiaddon.sh
-```
-
-The packaging script excludes:
-
-- `__pycache__`
-- legacy `user_files`
-- the local install/build helper scripts
-
-After building:
-
-1. Go to `https://ankiweb.net/shared/addons/`
-2. Sign in
-3. Use the Upload button
-4. Upload the generated `.ankiaddon` file
-5. Fill in the add-on title, description, and supported Anki versions
-
-AnkiWeb expects the archive contents to have files like `__init__.py` at the root of the archive, not wrapped in an extra top-level folder.
-
-## Notes
-
-- This add-on is designed for Windows haptics first.
-- Controller rumble depends on either native XInput support on Windows or browser gamepad haptics support on non-Windows platforms, and may not work with every controller or driver stack.
-- The inline overlay keeps Speed Streak on the left and pushes the review card to the right.
-- The external window can store reusable position presets for common Anki layouts.
+[MIT](LICENSE)

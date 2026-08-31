@@ -4,6 +4,21 @@ This changelog tracks the versioned Speed Streak add-on folders in this reposito
 
 It is written as a repository-level record so the older frozen version folders can stay unchanged.
 
+## `speed-streak-addon-v2.04`
+
+Current public release.
+
+- Added Best Only, Streak Strip, and Five Streaks record displays with all-time and today comparison sets.
+- Added detailed record inspection for active time, pauses, Review departures, restart continuation, undo use, rank, and Pure status.
+- Added live record updates and a configurable new-record celebration.
+- Added the synchronized “Time’s Running Out” cue with warning threshold, custom/uploaded sounds, per-sound volume, and waveform-based alignment.
+- Reworked audio playback to preload packaged effects and improve first-play latency and consistency.
+- Added Time Drain countdown suspension that leaves the card answerable and resumes the normal timer on the next card.
+- Added a Help / Feedback hub with AnkiWeb review, Reddit feedback, and Ko-fi links.
+- Added experimental macOS controller-haptics backends, diagnostics, and a helper protocol while retaining safe fallback behavior.
+- Preserved the existing configurable streak-resume policy and profile data across updates.
+- Kept Time Boost, Legacy Points, Fusion Rings, Singularity, Crystal Reactor, External Window presets, special timers, Review Later, and customization from the 2.0 line.
+
 ## `speed-streak-addon`
 
 Base Speed Streak release line before the numbered version forks.
