@@ -1,5 +1,9 @@
 # Speed Streak 2.05 diagnostic build
 
+**Superseded:** use [diagnostic build .2](../2.05-macos-diagnostic.2/README.md),
+which correctly replaces the existing AnkiWeb installation. This earlier package
+can install alongside the AnkiWeb copy and should not be used for a new test.
+
 This is an optional test build for investigating unexpected Anki shutdowns.
 It has not been uploaded to AnkiWeb and does not claim to fix the shutdown.
 
